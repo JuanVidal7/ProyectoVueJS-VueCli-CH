@@ -1,18 +1,26 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <mi-componente :nombre="nombre" :apellido="apellido" :edad="edad" :class="newClass" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MiComponente from './components/MiComponente.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    MiComponente
+  },
+  data: function() {
+  return {
+    nombre: ['Juan', 'Andrés', 'Francisco', 'Camila'],
+    apellido: ['Vidal', 'Calamaro', 'Gutierrez', 'Pajón'],
+    edad: [34, 25, 47, 32],
+    newClass: 'table table-hover'
+  };
+}
 }
 </script>
 
