@@ -1,25 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <mi-componente :nombre="nombre" :apellido="apellido" :edad="edad" :class="newClass" />
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <listado-page :nombre="nombre" :precio="precio" :descripcion="descripcion" :class="newClass" />
+    <loguin-page />
+    <signup-page />
+    <carrito-page :class="newClass"  />
   </div>
 </template>
 
 <script>
-import MiComponente from './components/MiComponente.vue'
+import LoguinPage from './components/LoguinPage.vue';
+import ListadoPage from './components/ListadoPage.vue'
+import SignupPage from './components/SignupPage.vue'
+import CarritoPage from './components/CarritoPage.vue';
+
 
 export default {
   name: 'App',
   components: {
-    MiComponente
+    ListadoPage,
+    LoguinPage,
+    SignupPage,
+    CarritoPage,
   },
-  data: function() {
-  return {
-    nombre: ['Juan', 'Andrés', 'Francisco', 'Camila'],
-    apellido: ['Vidal', 'Calamaro', 'Gutierrez', 'Pajón'],
-    edad: [34, 25, 47, 32],
-    newClass: 'table table-hover'
-  };
+  data() {
+    return {
+      nombre: ['Hershey Blanca', 'Hershey Negra', 'M & M', 'Ferrero Rocher'],
+      precio: [2500, 3000, 1500, 12000],
+      descripcion: [`Cookies 'n' creme es una barrita de chocolate blanco con bits de galleta similares en sabor y textura a las Oreo.`, 
+      `La barrita de chocolate con leche Hershey's, tiene un sabor único característico, amargo y picante. Esta es su variedad chocolate negro.`, 
+      `Pequeños pedazos de chocolate con leche revestidos de azucar.`,
+      `Los bombones están formados por una capa de barquillo rellena con pasta de cacao y avellanas, recubierta por una capa de chocolate con avellanas trituradas y una avellana entera en el interior, envueltos en papel metalizado y colocados individualmente sobre un molde de papel engrasado.`],
+      newClass: 'table table-hover'
+    };
 }
 }
 </script>
